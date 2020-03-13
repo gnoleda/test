@@ -1,0 +1,177 @@
+<!--
+Purpose:    PROG 3180 Assignment 1
+Created By: Aubrey Delong 7677545
+History:    Created Feb.19 2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>AD Feedback A1</title>
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+        <link rel="icon" type="image/png" href="img/AD-icon.png"/>
+    </head>
+    <body>
+        <!--first page-->
+        <div data-role="page" id="ADHomePage">
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <h1>AD Feedback A1</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#ADHomePage" data-icon="home" class="ui-btn-active ui-state-persist" data-theme="a">Home</a></li>
+                        <li><a href="#ADAddFeedbackPage" data-icon="plus" data-theme="a">Add</a></li>
+                        <li><a href="#ADViewFeedbackPage" data-icon="grid" data-theme="a">Reviews</a></li>
+                        <li><a href="#ADSettingsPage" data-icon="gear" data-theme="a">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h1>Aubrey Delong's Feedback A1 App</h1>
+                <p>Welcome to Aubrey Delong's Feedback A1 app. A prototype designed for mobile programming class. This is
+                    the first iteration of the app to keep track of different places you visited along with your reviews.</p>
+                <p style="text-align:center"><img src="img/AD-icon.png" alt="sailboat" id="ADIconImg"></p>
+                <p>Please feel free to contact me if you have any suggestions!</p>
+                <a href="#" data-role="button" data-icon="plus">Call: 519.344.7771</a>
+                <a href="#" data-role="button" data-icon="plus">adelong@conestogac.on.ca</a>
+                <p>Website:</p>
+                <a href="#" data-role="button" data-icon="plus">Conestoga College</a>
+            </section>
+            <footer data-role="footer" data-position="fixed"  data-theme="b">
+                <h4>&copy; 2016 Aubrey Delong</h4>
+            </footer>
+        </div>
+
+        <!--second page-->
+        <div data-role="page" id="ADAddFeedbackPage">
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <h1>Add a Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#ADHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#ADAddFeedbackPage" data-icon="plus" class="ui-btn-active ui-state-persist" data-theme="a">Add</a></li>
+                        <li><a href="#ADViewFeedbackPage" data-icon="grid" data-theme="a">Reviews</a></li>
+                        <li><a href="#ADSettingsPage" data-icon="gear" data-theme="a">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="post" id="ADAddForm">
+                    <label for="ADBusinessName">Business Name:</label>
+                    <input type="text" id="ADBusinessName" name="ADBusinessName">
+                    <label for="ADReviewerEmail">Reviewer Email:</label>
+                    <input type="text" id="ADReviewerEmail" name="ADReviewerEmail">
+                    <label for="ADReviewerComments">Reviewer Comments:</label>
+                    <textarea name="ADReviewerComments" id="ADReviewerComments" cols="30" rows="10"></textarea>
+                    <label for="ADRating">Overall Rating (1-100):</label>
+                    <input type="number" id="ADRating" name="ADRatingMod" min="1" max="100">
+
+                    <button type="button" data-role="button" id="ADSaveFeedback" name="ADSaveFeedback" data-inline="true" class="ui-btn-active">Save</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-position="fixed"  data-theme="b">
+                <h4>&copy; 2016 Aubrey Delong</h4>
+            </footer>
+        </div>
+
+        <!--third page-->
+        <div data-role="page" id="ADViewFeedbackPage">
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <h1>Add a Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#ADHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#ADAddFeedbackPage" data-icon="plus" data-theme="a">Add</a></li>
+                        <li><a href="#ADViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist" data-theme="a">Reviews</a></li>
+                        <li><a href="#ADSettingsPage" data-icon="gear" data-theme="a">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <ul data-role="listview" id="ADFeedbackList" class="ui-listview-inset" data-icon="false">
+                    <li><a href="#ADEditFeedbackPage">
+                        <h2>Business Name: Aubrey's Smoothie Shop</h2>
+                        <p>Reviewer's Email: ad@gmail.com</p>
+                        <p>Comments: Worst strawberry smoothie I've ever had!!</p>
+                        <p>Overall Rating: 60%</p>
+                    </a></li>
+                    <li><a href="#ADEditFeedbackPage">
+                        <h2>Business Name: Mr. Ramen</h2>
+                        <p>Reviewer's Email: hotstuff123@hotmail.com</p>
+                        <p>Comments: Excellent ambiance, wonderful food!</p>
+                        <p>Overall Rating: 100%</p>
+                    </a></li>
+                </ul>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h4>&copy; 2016 Aubrey Delong</h4>
+            </footer>
+        </div>
+
+        <!--fourth page-->
+        <div data-role="page" id="ADEditFeedbackPage">
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <h1>Modify Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#ADHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#ADAddFeedbackPage" data-icon="plus" data-theme="a">Add</a></li>
+                        <li><a href="#ADViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist" data-theme="a">Reviews</a></li>
+                        <li><a href="#ADSettingsPage" data-icon="gear" data-theme="a">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="post" id="ADModifyFeedback">
+                    <label for="ADBusinessNameMod">Business Name:</label>
+                    <input type="text" id="ADBusinessNameMod" name="ADBusinessNameMod" value="Aubrey's Smoothie Shop">
+                    <label for="ADReviewerEmailMod">Business Name:</label>
+                    <input type="text" id="ADReviewerEmailMod" name="ADReviewerEmailMod" value="ad@gmail.com">
+                    <label for="ADReviewerCommentsMod">Reviewer Comments:</label>
+                    <textarea name="ADReviewerCommentsMod" id="ADReviewerCommentsMod" cols="30" rows="10">Worst strawberry smoothie I've ever had!!</textarea>
+                    <label for="ADRatingMod">Overall Rating (1-100):</label>
+                    <input type="number" id="ADRatingMod" name="ADRatingMod" value= "60" min="1" max="100">
+
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button type="button" data-role="button" id="ADCancel" name="ADCancel" data-inline="true">Cancel</button>
+                        <button type="button" data-role="button" id="ADDelete" name="ADDelete" data-inline="true" data-theme="b">Delete</button>
+                        <button type="button" data-role="button" id="ADUpdate" name="ADUpdate" data-inline="true" class="ui-btn-active">Update</button>
+                    </div>
+                </form>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h4>&copy; 2016 Aubrey Delong</h4>
+            </footer>
+        </div>
+
+        <!--fifth page-->
+        <div data-role="page" id="ADSettingsPage">
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <h1>Settings</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#ADHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#ADAddFeedbackPage" data-icon="plus" data-theme="a">Add</a></li>
+                        <li><a href="#ADViewFeedbackPage" data-icon="grid" data-theme="a">Reviews</a></li>
+                        <li><a href="#ADSettingsPage" data-icon="gear" class="ui-btn-active ui-state-persist" data-theme="a">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="post" id="ADModifyDefaultEmail">
+                    <label for="ADDefaultEmail">Default Reviewer Email:</label>
+                    <input type="email" id="ADDefaultEmail" name="ADDefaultEmail">
+
+                    <button type="button" data-role="button" id="ADSaveDefault" name="ADSaveDefault" class="ui-btn-active">Save Defaults</button>
+                    <button type="button" data-role="button" id="ADClearDB" name="ADClear" data-theme="b">Clear Database</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h4>&copy; 2016 Aubrey Delong</h4>
+            </footer>
+        </div>
+    </body>
+</html>
